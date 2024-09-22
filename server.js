@@ -28,7 +28,8 @@ const personRoutes = require('./routes/personRoutes');
 const menuRoutes = require('./routes/menuRoutes');
 
 // Use the routers
-app.use('/person', localAuthMiddleware, personRoutes)
+// app.use('/person', localAuthMiddleware, personRoutes) // Authentication using local strategy(username, password)
+app.use('/person', personRoutes) // Authentication via JWT Tokens
 app.use('/menu', menuRoutes);
 
 app.listen(PORT, () => {
